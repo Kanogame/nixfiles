@@ -70,7 +70,10 @@
        			STOP_CHARGE_THRESH_BAT0 = 80; 
 		};
 	};
-
+	services.syncthing = {
+        	enable = true;
+        	user = "laptop";
+	};
   	nixpkgs.config.allowUnfree = true;
 
   	environment.systemPackages = with pkgs; [
@@ -92,6 +95,7 @@
 		killall
 		upower
 		starship
+		syncthing
 
 		#gpu
 		mesa
@@ -113,10 +117,9 @@
 	};
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
-	# Open ports in the firewall.
-	# networking.firewall.allowedTCPPorts = [ ... ];
-	# networking.firewall.allowedUDPPorts = [ ... ];
-	# Or disable the firewall altogether.
-	# networking.firewall.enable = false;
-  	system.stateVersion = "24.05"; 
+  	
+	networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+   	networking.firewall.allowedUDPPorts = [ 22000 21027 ];
+
+	system.stateVersion = "24.05"; 
 }
