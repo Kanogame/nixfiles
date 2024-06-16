@@ -131,7 +131,7 @@ home-manager.users.kano = {pkgs, ...}: {
 * {
     border: none;
     border-radius: 0px;
-    font-family: "Fira Mono", "Noto Sans CJK JP";
+    font-family: "FiraMono Nerd Font Mono";
     font-size: 14px;
     font-style: normal;
     min-height: 0;

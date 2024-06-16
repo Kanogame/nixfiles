@@ -93,6 +93,10 @@
 		upower
 		starship
 
+		#gpu
+		mesa
+		amdvlk
+
 		#doom
 		fd
 		ripgrep
