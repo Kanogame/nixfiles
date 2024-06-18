@@ -74,8 +74,14 @@
         	enable = true;
         	user = "laptop";
 	};
+	services.pipewire = {
+  		enable = true;
+  		alsa.enable = true;
+  		alsa.support32Bit = true;
+  		pulse.enable = true;
+	};
   	nixpkgs.config.allowUnfree = true;
-
+	services.blueman.enable = true;
   	environment.systemPackages = with pkgs; [
 		spotify
 		fcitx5
@@ -89,6 +95,7 @@
 		anki-bin
 
 		#utils
+		mpv
 		wget
 		git
 		openssh
@@ -97,7 +104,6 @@
 		upower
 		starship
 		syncthing
-		blueman
 
 		#sound
 		pipewire
