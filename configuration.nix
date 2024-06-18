@@ -86,6 +86,7 @@
 		rakudo
 		fastfetch
 		emacs
+		anki-bin
 
 		#utils
 		wget
@@ -96,6 +97,11 @@
 		upower
 		starship
 		syncthing
+		blueman-applet
+
+		#sound
+		pipewire
+		pavucontrol
 
 		#gpu
 		mesa

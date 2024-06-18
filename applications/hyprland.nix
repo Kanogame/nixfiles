@@ -1,13 +1,18 @@
 {
 	home-manager.users.kano = {pkgs, ...}: {
 		home.packages = with pkgs; [		
-			xdg-desktop-portal-hyprland
 			hyprland
 			tofi
 			waybar
 			swww
 			swaylock
 			pywal
+
+			#utils
+			grim
+			feh
+			swappy
+			xdg-desktop-portal-hyprland
 		];
 
 		wayland.windowManager.hyprland = {
