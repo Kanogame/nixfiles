@@ -97,7 +97,7 @@
 		upower
 		starship
 		syncthing
-		blueman-applet
+		blueman
 
 		#sound
 		pipewire
