@@ -1,12 +1,12 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, home-manager, ... }:
 
 {
   imports =
-	[	<home-manager/nixos>
+	[	
+		home-manager.nixosModules.default
 		./applications/hyprland.nix
 		./applications/waybar.nix
 		./applications/utils.nix
-		./applications/librewolf.nix
 		./hardware-configuration.nix
 	];
 
@@ -18,7 +18,7 @@
 
 	#locales
   	time.timeZone = "Asia/Novosibirsk";
-  	i18n.defaultLocale = "en_US.UTF-8";
+  	i18n.defaultLocale = "ja_JP.UTF-8";
   	i18n.extraLocaleSettings = {
     		LC_ADDRESS = "ru_RU.UTF-8";
     		LC_IDENTIFICATION = "ru_RU.UTF-8";
@@ -127,7 +127,7 @@
 			zsh 
 		];
 		programs.bash.enable = true;
-  		home.stateVersion = "24.05";
+		home.stateVersion = "24.05"; 
 	};
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -136,7 +136,7 @@
 		enable = true;
 		ports = [ 22 ];
 		settings = {
-			PasswordAuthentication = true;
+			PasswordAuthentication = false;
 			AllowUsers = [ "kano" ];
 			PermitRootLogin = "no";
 		};
