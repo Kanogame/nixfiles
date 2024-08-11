@@ -6,6 +6,7 @@
 		./applications/hyprland.nix
 		./applications/waybar.nix
 		./applications/utils.nix
+		./applications/librewolf.nix
 		./hardware-configuration.nix
 	];
 
@@ -89,6 +90,7 @@
 		xwayland
 		alacritty
 		librewolf
+		zef
 		rakudo
 		fastfetch
 		emacs
@@ -130,7 +132,17 @@
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
   	
-	networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+	services.openssh = {
+		enable = true;
+		ports = [ 22 ];
+		settings = {
+			PasswordAuthentication = true;
+			AllowUsers = [ "kano" ];
+			PermitRootLogin = "no";
+		};
+	};
+
+	networking.firewall.allowedTCPPorts = [ 8384 22000 22 ];
    	networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
 	system.stateVersion = "24.05"; 
