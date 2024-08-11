@@ -136,6 +136,8 @@
 		home.stateVersion = "24.05"; 
 	};
 
+services.displayManager.ly.enable = true;
+
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
   	
 	services.openssh = {
