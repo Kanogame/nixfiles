@@ -43,6 +43,12 @@
 		(nerdfonts.override { fonts = [ "FiraMono" ]; })
 	];
 
+	console = {
+	  earlySetup = true;
+	  font = "noto-fonts-cjk";
+	};
+
+
 	users.users.kano = {
 		isNormalUser = true;
 		extraGroups = ["wheel" "video" ];
