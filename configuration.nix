@@ -136,7 +136,6 @@
 		home.stateVersion = "24.05"; 
 	};
 
-	services.displayManager.lemurs.enable = true;
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
   	
