@@ -20,15 +20,15 @@
   	time.timeZone = "Asia/Novosibirsk";
   	i18n.defaultLocale = "ja_JP.UTF-8";
   	i18n.extraLocaleSettings = {
-    		LC_ADDRESS = "ru_RU.UTF-8";
-    		LC_IDENTIFICATION = "ru_RU.UTF-8";
-    		LC_MEASUREMENT = "ru_RU.UTF-8";
-    		LC_MONETARY = "ru_RU.UTF-8";
-    		LC_NAME = "ru_RU.UTF-8";
-    		LC_NUMERIC = "ru_RU.UTF-8";
-    		LC_PAPER = "ru_RU.UTF-8";
-    		LC_TELEPHONE = "ru_RU.UTF-8";
-    		LC_TIME = "ru_RU.UTF-8";
+    		LC_ADDRESS = "ja_JP.UTF-8";
+    		LC_IDENTIFICATION = "ja_JP.UTF-8";
+    		LC_MEASUREMENT = "ja_JP.UTF-8";
+    		LC_MONETARY = "ja_JP.UTF-8";
+    		LC_NAME = "ja_JP.UTF-8";
+    		LC_NUMERIC = "ja_JP.UTF-8";
+    		LC_PAPER = "ja_JP.UTF-8";
+    		LC_TELEPHONE = "ja_JP.UTF-8";
+    		LC_TIME = "ja_JP.UTF-8";
   	};
 
   	services.xserver = {

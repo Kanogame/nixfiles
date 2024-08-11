@@ -15,10 +15,11 @@
 		nixosConfigurations."Thinkpad-T480" = nixpkgs.lib.nixosSystem {
 			specialArgs = inputs;
 			modules = [
-				nix.settings = {
+				{ nix.settings = {
 					substituters = [ "https://cosmic.cachix.org/" ];
 					trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-				};
+				};} 
+				inputs.nixos-cosmic.nixosModules.default
 				./configuration.nix
 			];
 		};
