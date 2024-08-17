@@ -2,7 +2,7 @@
 	description = "A very basic flake";
 
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 		home-manager.url = "github:nix-community/home-manager";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -12,7 +12,8 @@
 		};
 	};
 	outputs = { nixpkgs, ... } @ inputs: {
-		nixosConfigurations."Thinkpad-T480" = nixpkgs.lib.nixosSystem {
+		nixosConfigurations {
+		natsu = nixpkgs.lib.nixosSystem {
 			specialArgs = inputs;
 			modules = [
 				{ nix.settings = {
@@ -20,8 +21,9 @@
 					trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
 				};} 
 				inputs.nixos-cosmic.nixosModules.default
-				./configuration.nix
+				./hosts/natsu
 			];
+		};
 		};
 	};
 }
