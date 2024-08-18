@@ -4,7 +4,7 @@
   imports =
 	[	
 		home-manager.nixosModules.default
-		../../modules/general/jp-locale.nix
+		../../modules/general/ja-locale.nix
 		../../applications/hyprland.nix
 		../../applications/waybar.nix
 		../../applications/utils.nix
