@@ -12,7 +12,7 @@
 		};
 	};
 	outputs = { nixpkgs, ... } @ inputs: {
-		nixosConfigurations {
+	nixosConfigurations = {
 		natsu = nixpkgs.lib.nixosSystem {
 			specialArgs = inputs;
 			modules = [
