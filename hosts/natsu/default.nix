@@ -13,7 +13,9 @@
 
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
-  	
+
+	time.timeZone = lib.mkDefault "Asia/Novosibirsk";
+
 	networking.hostName = "natsu";
   	networking.networkmanager.enable = true;
 
