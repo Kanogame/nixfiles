@@ -106,11 +106,11 @@
 			"$mod, C, killactive"
 			"$mod, V, togglefloating"
 			"$mod, P, pseudo"
-			"$mod, J, togglesplit"
+			"$mod, U, togglesplit"
 			"$mod, F, fullscreen"
 			"$mod SHIFT, M, exit"
 			#apps
-			"$mod, L, exec, swaylock"
+			"$mod, O, exec, swaylock"
 			"$mod, E, exec, thunar"
 			"$mod, Q, exec, alacritty"
 			"$mod, D, exec, emacsclient -c"
