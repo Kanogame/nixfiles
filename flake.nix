@@ -24,6 +24,11 @@
 				./hosts/natsu
 			];
 		};
+		gregtech = nixpkgs.lib.nixosSystem {
+			spevialArgs = [
+				./hosts/gregtech
+			];
+		};
 		};
 	};
 }

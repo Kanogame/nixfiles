@@ -5,6 +5,8 @@
 	[	
 		home-manager.nixosModules.default
 		../../modules/general/ja-locale.nix
+		../../modules/general/pipewire.nix
+		../../modules/general/users.nix
 		../../applications/hyprland.nix
 		../../applications/waybar.nix
 		../../applications/utils.nix
@@ -31,11 +33,6 @@
 		(nerdfonts.override { fonts = [ "FiraMono" ]; })
 	];
 
-	users.users.kano = {
-		isNormalUser = true;
-		extraGroups = ["wheel" "video" ];
-	};
-
 	programs.hyprland.enable = true;
 	
 	#laptop thing
@@ -61,12 +58,6 @@
 	services.syncthing = {
         	enable = true;
         	user = "laptop";
-	};
-	services.pipewire = {
-  		enable = true;
-  		alsa.enable = true;
-  		alsa.support32Bit = true;
-  		pulse.enable = true;
 	};
   	nixpkgs.config.allowUnfree = true;
 	services.blueman.enable = true;
