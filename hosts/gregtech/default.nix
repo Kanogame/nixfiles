@@ -1,12 +1,15 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, home-manager, ... }:
 
 {
   imports =
     [
-    	
+    	home-manager.nixosModules.default	
 	../../modules/general/en-locale.nix
 	../../modules/general/pipewire.nix
 	../../modules/general/users.nix
+	../../applications/hyprland.nix
+	../../applications/waybar.nix
+	../../applications/utils.nix
     	./hardware-configuration.nix
     ];
 

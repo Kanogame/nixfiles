@@ -118,14 +118,14 @@
 			"$mod SHIFT, S, exec, grim -t jpeg -q 80 -g '$(slurp)' - | swappy -f -"
 			"$mod, S, exec, grim -t jpeg -q 100 -g '$(slurp)' - | feh -B black -"
 			#position	
-			"$mod, left, movefocus, l"
-			"$mod, right, movefocus, r"
-			"$mod, up, movefocus, u"
-			"$mod, down, movefocus, d"
-			"$mod SHIFT, left, movewindow, l"
-			"$mod SHIFT, right, movewindow, r"
-			"$mod SHIFT, up, movewindow, u"
-			"$mod SHIFT, down, movewindow, d"
+			"$mod, h, movefocus, l"
+			"$mod, j, movefocus, r"
+			"$mod, k, movefocus, u"
+			"$mod, l, movefocus, d"
+			"$mod SHIFT, h, movewindow, l"
+			"$mod SHIFT, j, movewindow, r"
+			"$mod SHIFT, k, movewindow, u"
+			"$mod SHIFT, l, movewindow, d"
 		]
 		++ (
         		builtins.concatLists (builtins.genList (
