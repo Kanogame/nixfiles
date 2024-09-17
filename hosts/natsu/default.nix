@@ -66,6 +66,7 @@
 	services.displayManager.cosmic-greeter.enable = true;
 
 	environment.systemPackages = with pkgs; [
+		vscodium
 		python312
 		nekoray
 		github-cli
