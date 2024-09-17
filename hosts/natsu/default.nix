@@ -66,6 +66,8 @@
 	services.displayManager.cosmic-greeter.enable = true;
 
 	environment.systemPackages = with pkgs; [
+		python312
+		nekoray
 		github-cli
 		spotify
 		fcitx5
