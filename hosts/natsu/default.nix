@@ -66,6 +66,10 @@
 	services.displayManager.cosmic-greeter.enable = true;
 
 	environment.systemPackages = with pkgs; [
+		libreoffice-qt
+        	hunspell
+        	hunspellDicts.en_US
+        	hunspellDicts.ru_RU
 		vscodium
 		python312
 		nekoray
