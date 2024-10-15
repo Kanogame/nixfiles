@@ -9,7 +9,7 @@
 		../../modules/general/users.nix
 		../../applications/hyprland.nix
 		../../applications/waybar.nix
-		../../applications/utils.nix
+		#../../applications/utils.nix moving to gh
 		./hardware-configuration.nix
 	];
 
