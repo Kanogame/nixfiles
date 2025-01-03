@@ -70,8 +70,8 @@
     gh
     cifs-utils
     fcitx5
-    fcitx5-config-qt
-    mozc
+    libsForQt5.fcitx5-configtool
+    fcitx5-mozc
   ];
 
   home-manager.users.kano = {pkgs, ...}: {
