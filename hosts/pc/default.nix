@@ -70,6 +70,7 @@
     gh
     cifs-utils
     fcitx5
+    fcitx5-config-qt
     mozc
   ];
 
