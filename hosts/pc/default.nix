@@ -73,6 +73,7 @@
     libsForQt5.fcitx5-configtool
     fcitx5-mozc
     vscodium  
+    nixpkgs-fmt
 ];
 
   home-manager.users.kano = {pkgs, ...}: {
