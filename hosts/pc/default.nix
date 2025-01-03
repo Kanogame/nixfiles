@@ -72,7 +72,8 @@
     fcitx5
     libsForQt5.fcitx5-configtool
     fcitx5-mozc
-  ];
+    vscodium  
+];
 
   home-manager.users.kano = {pkgs, ...}: {
   	home.packages = with pkgs; [
