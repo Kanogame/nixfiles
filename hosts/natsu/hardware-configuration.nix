@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "amdgpu" ];
@@ -14,31 +15,33 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/abd08a04-ec8c-455c-9983-a9ca0ac7111f";
+    {
+      device = "/dev/disk/by-uuid/abd08a04-ec8c-455c-9983-a9ca0ac7111f";
       fsType = "ext4";
     };
 
   boot.initrd.luks.devices."luks-56cb2fe4-1bd4-4808-b18b-6bf01272b88b".device = "/dev/disk/by-uuid/56cb2fe4-1bd4-4808-b18b-6bf01272b88b";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/766B-6001";
+    {
+      device = "/dev/disk/by-uuid/766B-6001";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices = [ ];
 
-  hardware.bluetooth.enable = true; 
+  hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-hardware.pulseaudio.configFile = pkgs.writeText "default.pa" ''
-  load-module module-bluetooth-policy
-  load-module module-bluetooth-discover
-  ## module fails to load with 
-  ##   module-bluez5-device.c: Failed to get device path from module arguments
-  ##   module.c: Failed to load module "module-bluez5-device" (argument: ""): initialization failed.
-  # load-module module-bluez5-device
-  # load-module module-bluez5-discover
-'';
+  hardware.pulseaudio.configFile = pkgs.writeText "default.pa" ''
+    load-module module-bluetooth-policy
+    load-module module-bluetooth-discover
+    ## module fails to load with 
+    ##   module-bluez5-device.c: Failed to get device path from module arguments
+    ##   module.c: Failed to load module "module-bluez5-device" (argument: ""): initialization failed.
+    # load-module module-bluez5-device
+    # load-module module-bluez5-discover
+  '';
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction

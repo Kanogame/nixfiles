@@ -10,7 +10,7 @@
       home-manager.nixosModules.default
       ../../applications/anki.nix
       ../../applications/librewolf.nix
-      ../../applications/term.nix 
+      ../../applications/term.nix
       ../../modules/fonts/fonts.nix
 
       ./hardware-configuration.nix
@@ -19,19 +19,19 @@
 
 
   boot = {
-      loader = {
-        efi.canTouchEfiVariables = true;
-        grub = {
-          enable = true;
-          device = "nodev";
-          efiSupport = true;
-        };
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
       };
     };
-   time.timeZone = lib.mkDefault "Asia/Novosibirsk";
+  };
+  time.timeZone = lib.mkDefault "Asia/Novosibirsk";
 
-   networking.hostName = "pc";
-   networking.networkmanager.enable = true;
+  networking.hostName = "pc";
+  networking.networkmanager.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -62,7 +62,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     wget
     windowmaker
     stalonetray
@@ -72,19 +72,19 @@
     fcitx5
     libsForQt5.fcitx5-configtool
     fcitx5-mozc
-    vscodium  
+    vscodium
     nixpkgs-fmt
-];
+  ];
 
-  home-manager.users.kano = {pkgs, ...}: {
-  	home.packages = with pkgs; [
-  		tmux
-		fbterm
-		fbv
-		zsh
-	];
-	programs.bash.enable = true;
-	home.stateVersion = "24.11";
+  home-manager.users.kano = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      tmux
+      fbterm
+      fbv
+      zsh
+    ];
+    programs.bash.enable = true;
+    home.stateVersion = "24.11";
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

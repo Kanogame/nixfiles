@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "ahci" "ohci_pci" "ehci_pci" "usb_storage" "ums_realtek" "sd_mod" "sr_mod" ];
@@ -17,22 +18,26 @@
   hardware.opengl.driSupport32Bit = true;
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3b5621cf-a690-4a14-9a7a-8d5629f158ec";
+    {
+      device = "/dev/disk/by-uuid/3b5621cf-a690-4a14-9a7a-8d5629f158ec";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/0BF1-1271";
+    {
+      device = "/dev/disk/by-uuid/0BF1-1271";
       fsType = "vfat";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/ba05dcd2-0dea-433c-99da-e0f16b26a98d";
+    {
+      device = "/dev/disk/by-uuid/ba05dcd2-0dea-433c-99da-e0f16b26a98d";
       fsType = "ext4";
     };
 
   fileSystems."/home/storage" =
-    { device = "/dev/disk/by-uuid/868538b6-4ecf-4eb0-87f2-1580a6c9cdd0";
+    {
+      device = "/dev/disk/by-uuid/868538b6-4ecf-4eb0-87f2-1580a6c9cdd0";
       fsType = "ext4";
     };
 
