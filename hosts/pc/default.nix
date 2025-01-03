@@ -65,9 +65,12 @@
     vim 
     wget
     windowmaker
+    stalonetray
     git
     gh
     cifs-utils
+    fcitx5
+    mozc
   ];
 
   home-manager.users.kano = {pkgs, ...}: {
