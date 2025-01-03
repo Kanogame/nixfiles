@@ -68,6 +68,7 @@
     windowmaker
     git
     gh
+    cifs
   ];
 
   home-manager.users.kano = {pkgs, ...}: {
