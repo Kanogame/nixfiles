@@ -52,7 +52,6 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kano = {
-    initialPassword = "wasd";
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
@@ -68,7 +67,7 @@
     windowmaker
     git
     gh
-    cifs
+    cifs-utils
   ];
 
   home-manager.users.kano = {pkgs, ...}: {
