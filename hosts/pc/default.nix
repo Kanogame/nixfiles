@@ -73,6 +73,8 @@
     libsForQt5.fcitx5-configtool
     fcitx5-mozc
     vscodium
+    xorg.xclock
+    nekoray
     nixpkgs-fmt
   ];
 
