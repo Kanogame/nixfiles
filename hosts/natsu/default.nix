@@ -7,8 +7,7 @@
       ../../modules/general/en-locale.nix
       ../../modules/general/pipewire.nix
       ../../modules/general/users.nix
-      ../../applications/hyprland.nix
-      ../../applications/waybar.nix
+      ../../modules/desktop/hyprland
       ./hardware-configuration.nix
     ];
 
