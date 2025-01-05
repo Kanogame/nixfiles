@@ -11,7 +11,11 @@
       ../../applications/anki.nix
       ../../applications/librewolf.nix
       ../../applications/term.nix
-      ../../modules/fonts/fonts.nix
+
+
+      ../../modules/desktop/hyprland
+      ../../modules/fonts
+      ../../modules/emacs
 
       ./hardware-configuration.nix
     ];
@@ -75,6 +79,7 @@
     vscodium
     xorg.xclock
     nekoray
+    chromium
     nixpkgs-fmt
   ];
 

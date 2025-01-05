@@ -1,9 +1,6 @@
 {
   home-manager.users.kano = { pkgs, ... }: {
     home.packages = with pkgs; [
-      hyprland
-      tofi
-      waybar
       swww
       swaylock
       pywal

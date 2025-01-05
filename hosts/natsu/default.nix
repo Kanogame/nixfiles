@@ -4,10 +4,13 @@
   imports =
     [
       home-manager.nixosModules.default
+
+
       ../../modules/general/en-locale.nix
       ../../modules/general/pipewire.nix
       ../../modules/general/users.nix
       ../../modules/desktop/hyprland
+      ../../modules/fonts
       ./hardware-configuration.nix
     ];
 
@@ -23,14 +26,6 @@
     xkb.layout = "us";
     xkb.variant = "";
   };
-
-  fonts.packages = with pkgs; [
-    liberation_ttf
-    jetbrains-mono
-    noto-fonts-cjk
-    noto-fonts
-    (nerdfonts.override { fonts = [ "FiraMono" ]; })
-  ];
 
   programs.hyprland.enable = true;
 
