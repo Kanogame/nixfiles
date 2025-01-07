@@ -1,0 +1,6 @@
+{ nixpkgs, ... }:
+{
+  imports = [
+    ./emacs.nix
+  ];
+}
