@@ -11,8 +11,9 @@
       ../../applications/anki.nix
       ../../applications/librewolf.nix
       ../../applications/term.nix
+      ../../applications/syncthing.nix
 
-
+      ../../modules/general/users.nix
       ../../modules/desktop/hyprland
       ../../modules/fonts
       ../../modules/emacs
@@ -40,6 +41,14 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
+  };
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -51,18 +60,6 @@
   };
 
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.kano = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -73,14 +70,14 @@
     git
     gh
     cifs-utils
-    fcitx5
-    libsForQt5.fcitx5-configtool
-    fcitx5-mozc
     vscodium
     xorg.xclock
     nekoray
     chromium
     nixpkgs-fmt
+    spotify
+    syncthing
+    gocryptfs
   ];
 
   home-manager.users.kano = { pkgs, ... }: {
