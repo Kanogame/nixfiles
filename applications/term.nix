@@ -59,6 +59,12 @@
         nd = "nix develop -c $SHELL";
       };
 
+	zplug = {
+    		enable = false;
+    		plugins = [ 
+			{name = "zsh-users/zsh-history-substring-search"; tags = [as:plugin];}
+		];
+  	};
 
     };
   };

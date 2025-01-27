@@ -1,8 +1,15 @@
 {
+  services.xserver.displayManager = {
+    lightdm = {
+      enable = true;
+      greeter.enable = true;
+      greeters.slick.enable = true;
+    };
+  };
+  programs.hyprland.enable = true;
   home-manager.users.kano = { pkgs, ... }: {
     home.packages = with pkgs; [
       swww
-      swaylock
       pywal
 
       #utils
@@ -53,11 +60,6 @@
           active_opacity = 1.0;
           inactive_opacity = 1.0;
 
-          blur = {
-            enabled = false;
-          };
-
-          blurls = [ "waybar" "lockscreen" ];
         };
 
         dwindle = {
@@ -86,26 +88,27 @@
           "$mod, C, killactive"
           "$mod, V, togglefloating"
           "$mod, P, pseudo"
+          "$mod, w, gnome-pomodoro"
           "$mod, U, togglesplit"
           "$mod, F, fullscreen"
           "$mod SHIFT, M, exit"
           #apps
-          "$mod, O, exec, swaylock"
+          "$mod, O, exec, hyprlock"
           "$mod, E, exec, thunar"
           "$mod, Q, exec, alacritty"
-          "$mod, D, exec, emacsclient -c"
+          "$mod, D, exec, emacs"
           "$mod, SPACE, exec, tofi-drun --drun-launch=true"
-          "$mod SHIFT, S, exec, grim -t jpeg -q 80 -g '$(slurp)' - | swappy -f -"
-          "$mod, S, exec, grim -t jpeg -q 100 -g '$(slurp)' - | feh -B black -"
+          "$mod SHIFT, S, exec, grim -t jpeg -q 80 -g \"$(slurp)\" - | swappy -f -"
+          "$mod, S, exec, grim -t jpeg -q 100 -g \"$(slurp)\" - | feh -B black -"
           #position	
           "$mod, h, movefocus, l"
           "$mod, j, movefocus, u"
-          "$mod, k, movefocus, r"
-          "$mod, l, movefocus, d"
+          "$mod, k, movefocus, d"
+          "$mod, l, movefocus, r"
           "$mod SHIFT, h, movewindow, l"
           "$mod SHIFT, j, movewindow, u"
-          "$mod SHIFT, k, movewindow, r"
-          "$mod SHIFT, l, movewindow, d"
+          "$mod SHIFT, k, movewindow, d"
+          "$mod SHIFT, l, movewindow, r"
         ]
         ++ (
           builtins.concatLists (builtins.genList

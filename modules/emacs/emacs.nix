@@ -16,7 +16,7 @@
 
         evil
       ];
-      extraConfig = builtins.readFile ./config.el;
+      #extraConfig = builtins.readFile ./config.el;
     };
   };
 }

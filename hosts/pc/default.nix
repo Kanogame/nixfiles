@@ -11,6 +11,7 @@
       ../../applications/anki.nix
       ../../applications/librewolf.nix
       ../../applications/term.nix
+      ../../applications/file-utils.nix
       ../../applications/syncthing.nix
 
       ../../modules/general/users.nix
@@ -35,7 +36,9 @@
   };
   time.timeZone = lib.mkDefault "Asia/Novosibirsk";
 
-  networking.hostName = "pc";
+services.udev.packages = with pkgs; [ platformio-core.udev ];  
+
+networking.hostName = "pc";
   networking.networkmanager.enable = true;
 
   # Enable the X11 windowing system.
@@ -78,6 +81,13 @@
     spotify
     syncthing
     gocryptfs
+    pavucontrol
+    telegram-desktop
+    blender
+    wireshark
+    zapret
+    ipset
+    gnome-pomodoro 
   ];
 
   home-manager.users.kano = { pkgs, ... }: {
