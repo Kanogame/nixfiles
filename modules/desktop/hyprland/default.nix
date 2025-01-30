@@ -3,7 +3,7 @@
 {
   imports = [
     ./hyprland.nix
-    ./hyrplock.nix
+    ./hyprlock.nix
     ./waybar.nix
     ./tofi.nix
   ];

@@ -14,6 +14,7 @@
       ../../applications/file-utils.nix
       ../../applications/syncthing.nix
 
+      ../../modules/general/en-locale.nix
       ../../modules/general/users.nix
       ../../modules/desktop/hyprland
       ../../modules/fonts
@@ -36,9 +37,9 @@
   };
   time.timeZone = lib.mkDefault "Asia/Novosibirsk";
 
-services.udev.packages = with pkgs; [ platformio-core.udev ];  
+  services.udev.packages = with pkgs; [ platformio-core.udev ];
 
-networking.hostName = "pc";
+  networking.hostName = "pc";
   networking.networkmanager.enable = true;
 
   # Enable the X11 windowing system.
@@ -87,8 +88,13 @@ networking.hostName = "pc";
     wireshark
     zapret
     ipset
-    gnome-pomodoro 
+    gnome-pomodoro
+    python312
+    docker
+    docker-compose
   ];
+
+  virtualisation.docker.enable = true;
 
   home-manager.users.kano = { pkgs, ... }: {
     home.packages = with pkgs; [

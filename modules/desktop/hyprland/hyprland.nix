@@ -88,11 +88,11 @@
           "$mod, C, killactive"
           "$mod, V, togglefloating"
           "$mod, P, pseudo"
-          "$mod, w, gnome-pomodoro"
           "$mod, U, togglesplit"
           "$mod, F, fullscreen"
           "$mod SHIFT, M, exit"
           #apps
+          "$mod, w, exec, gnome-pomodoro"
           "$mod, O, exec, hyprlock"
           "$mod, E, exec, thunar"
           "$mod, Q, exec, alacritty"

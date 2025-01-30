@@ -64,10 +64,12 @@
 
           tray = { spacing = 16; };
 
-          clock = {
-            "tooltip-format" = "<tt>{calendar}</tt>";
-            "format-alt" = "  {:%a, %d %b %Y}";
-            format = "󰥔  {:%I:%M %p}";
+          "clock" = {
+            "format" = " {:%H:%M:%S}";
+            "interval" = 1;
+            "tooltip" = "true";
+            "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+            "format-alt" = " {:%d/%m}";
           };
 
           pulseaudio = {
