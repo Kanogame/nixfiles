@@ -94,6 +94,8 @@
     docker-compose
   ];
 
+programs.wireshark.enable = true;
+
   virtualisation.docker.enable = true;
 
   home-manager.users.kano = { pkgs, ... }: {

@@ -70,7 +70,7 @@
 
         exec-once = [
           "dbus-update-activation-enviroment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-          "systemclt --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+          "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
           "fcitx5 -d"
           "waybar"
           "swww init"
