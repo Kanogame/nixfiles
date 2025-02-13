@@ -92,6 +92,11 @@
     python312
     docker
     docker-compose
+
+    libreoffice-qt
+    hunspell
+    hunspellDicts.en_US
+    hunspellDicts.ru_RU
   ];
 
 programs.wireshark.enable = true;
