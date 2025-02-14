@@ -75,7 +75,6 @@
     gh
     cifs-utils
     vscodium
-    xorg.xclock
     nekoray
     chromium
     nixpkgs-fmt
@@ -83,9 +82,6 @@
     syncthing
     gocryptfs
     pavucontrol
-    telegram-desktop
-    blender
-    wireshark
     zapret
     ipset
     gnome-pomodoro
@@ -97,6 +93,12 @@
     hunspell
     hunspellDicts.en_US
     hunspellDicts.ru_RU
+
+    
+    inkscape
+    telegram-desktop
+    blender
+    wireshark
   ];
 
 programs.wireshark.enable = true;
