@@ -2,8 +2,8 @@
   fonts.packages = with pkgs; [
     liberation_ttf
     jetbrains-mono
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts
-    (nerdfonts.override { fonts = [ "FiraMono" ]; })
+    pkgs.nerd-fonts.fira-mono
   ];
 }
