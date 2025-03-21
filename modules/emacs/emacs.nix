@@ -10,8 +10,8 @@
 
         #org
         org
-        #org-roam
-        #emacsql
+        org-roam
+        emacsql
         #emacsql-sqlite
 
         evil
