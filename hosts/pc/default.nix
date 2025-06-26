@@ -102,14 +102,14 @@
   ];
 
 programs.wireshark.enable = true;
-
+environment.extraOutputsToInstall = ["dev"];
   virtualisation.docker.enable = true;
 
   home-manager.users.kano = { pkgs, ... }: {
     home.packages = with pkgs; [
       tmux
       fbterm
-      fbv
+      #fbv
       zsh
     ];
     programs.bash.enable = true;
